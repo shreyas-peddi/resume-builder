@@ -1,0 +1,10 @@
+{% extends 'resume/header.html' %}
+{% block title %} Signout Form{% endblock title %}
+{% block body %}
+<div class="container" style="background :rgba(100,50,255,0.7); width: 100%; height: 702px; margin-top: -20px;">
+	<div class="card" style="margin-left: 580px;background-color: #83f68b;border-radius: 10px;width: 26%;height: 200px;position: relative; margin-top: 220px;">
+	<h1 class="signout"style="color: #1F4383; font-family: 'Comic Sans MS'; margin-left: 25px;margin-top: 35px;">You are Signed Out !!</h1>
+	<h2 class="click" style="color: #1F4383; font-family: 'Comic Sans MS'; margin-left: 20px;margin-top: 55px;"><a href="{%url 'signin'%}">Click here to SignIn again</a></h2>
+ 	</div>
+</div>
+{% endblock body %}

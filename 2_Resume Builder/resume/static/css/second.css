@@ -1,0 +1,91 @@
+.container-content{
+    color: white;
+    border-radius: 10px;
+    margin : 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 150px;
+    height: 550px;
+    width: 60%;
+    margin-left: 300px;
+    background: #5BF3AC;
+    font-family: 'Comic Sans MS'
+}
+
+body{
+  background: url('/static/images/typing.jpg');
+  background-size: cover;
+}
+
+.overlay{
+  background: rgba(100,50,255,0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 775px;
+}
+
+input[name=blank]{
+	margin-top: 50px;
+	margin-left: 150px;
+	height: 200px;
+	width: 200px;
+}
+input[name=table]{
+	margin-top: -200px;
+	margin-left: 550px;
+	height: 200px;
+	width: 200px;
+}
+input[name=blankformat]{
+	margin-top: 50px;
+	margin-left: 225px;
+}
+input[name=tableformat]{
+	margin-left: 380px;
+}
+h3{
+margin-top: 80px;
+margin-left: 160px;
+color: #1F4383;
+}
+button[name=blank]{
+border-radius: 15px;
+top: 50%;
+left: 50%;
+margin-top: 50px;
+margin-left: 200px;
+width: 10%;
+font-family: 'Comic Sans MS';
+background-color: #D4FED7;
+color: #1205CE;
+padding: 5px;
+}
+button[name=table]{
+border-radius: 15px;
+top: 50%;
+left: 50%;
+margin-top: -50px;
+margin-left: 600px;
+width: 10%;
+font-family: 'Comic Sans MS';
+background-color: #D4FED7;
+color: #1205CE;
+padding: 5px;
+}
+button[name=back]{
+border-radius: 15px;
+top: 50%;
+left: 50%;
+margin-top: -110px;
+margin-left: 365px;
+width: 20%;
+font-family: 'Comic Sans MS';
+background-color: #D4FED7;
+color: #1205CE;
+padding: 5px;
+}
+

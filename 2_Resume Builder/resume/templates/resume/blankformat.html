@@ -1,0 +1,131 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/third.css' %}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://github.com/MrRio/jsPDF/tree/master/dist"></script>
+    <title>Blank Format</title>
+  </head>  
+    <body>
+    <div class="overlay">
+       <div class="container-content" id="blankresume"><br><br>
+            <table style="margin-left: 45px" >
+              <tr>
+                <th style="width: 280px; height: 50px; text-align: center; font-size: 30px" id = "Name" name="name"> </th> </tr>
+               <tr> <th style="width: 80px; height: 20px; text-align: center" id = "Dob" name="dob"> </th>
+              </tr>
+            </table>
+            
+            <table style="margin-left: 45px; margin-top: 15px" >
+              <tr> <td style="height: 20px; text-align: left" id = "Email" name="email"> </td>
+                   <td style="height: 20px; text-align: right" id = "Nationality" name="nationality"> </td>
+              </tr>
+              <tr> <td style="height: 20px; text-align: left" id = "Phone" name="phone"> </td> 
+                   <td style="height: 20px; text-align: right" id = "Domicile" name="domicile"> </td>
+              </tr>
+              <tr> <td style="height: 20px; text-align: left" id = "Address" name="address"> </td> 
+                   <td style="height: 20px; text-align: right" id = "Hometown" name="hometown"> </td>
+              </tr>
+            </table>
+
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr> <td style="height: 20px; text-align: left" id = "University" name="university"> </td> </tr>
+              <tr> <td style="height: 20px; text-align: left" id = "Branch" name="branch"> </td> 
+                   <td style="height: 20px; width: 699px; text-align: left" id = "Duration" name="duration"> </td> </tr>
+            </table>
+
+            <table style="margin-left: 155px; margin-top: 25px; width: 78%" >
+              <tr>
+                <th style="width: 10px; height: 10px; text-align: left"> Skills:- </th> </tr>
+              <tr>
+                <td style="width: 650px; height: 100px; text-align: left" id = "Skills" name="skills"> </td>
+              </tr>
+            </table>
+
+            <table style="margin-left: 155px; margin-top: 25px; width: 78%" >
+              <tr>
+                <th style="width: 50px; height: 10px; text-align: left"> Projects:- </th> 
+              </tr>
+              <tr>
+                <td style="width: 950px; height: 180px; text-align: left" id = "Projects" name="projects"> </td>
+              </tr>
+            </table>
+            
+            <table style="margin-left: 155px; margin-top: 25px; width: 78%" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: left"> Accomplishments:- </th> 
+              </tr>
+              <tr>
+                <td style="width: 950px; height: 120px; text-align: left" id = "Accomplishments" name="accomplishments"> </td>
+              </tr>
+            </table>
+
+
+            <table style="margin-left: 155px; margin-top: 25px; width: 78%" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: left"> Experience:- </th> 
+              </tr>
+              <tr>
+                <td style="width: 950px; height: 200px; text-align: left" id = "Experience" name="experience"> </td>
+              </tr>
+            </table>
+       </div>
+       <div class="press">
+       <button type="submit"class="btn btn-primary" id="blanksave" onclick="blankresume()"> Save as PDF </button>
+       <button name="done" onclick="window.location.href='{% url 'signout' %}';">Sign Out</button>
+     </div>
+    </div>
+    <script>
+  const Name = localStorage.getItem("Name");
+  const Dob = localStorage.getItem("Dob");
+  const Email = localStorage.getItem("Email");
+  const Phone = localStorage.getItem("Phone");
+  const Address = localStorage.getItem("Address");
+  const Nationality = localStorage.getItem("Nationality");
+  const Domicile = localStorage.getItem("Domicile");
+  const Hometown = localStorage.getItem("Hometown");
+  const University = localStorage.getItem("University");
+  const Branch = localStorage.getItem("Branch");
+  const Duration = localStorage.getItem("Duration");
+  const Skills = localStorage.getItem("Skills");
+  const Projects = localStorage.getItem("Projects");
+  const Accomplishments = localStorage.getItem("Accomplishments");
+  const Experience = localStorage.getItem("Experience");
+
+  document.getElementById('Name').innerHTML=Name;
+  document.getElementById('Dob').innerHTML=Dob;
+  document.getElementById('Email').innerHTML=Email;
+  document.getElementById('Phone').innerHTML=Phone;
+  document.getElementById('Address').innerHTML=Address;
+  document.getElementById('Nationality').innerHTML=Nationality;
+  document.getElementById('Domicile').innerHTML=Domicile;
+  document.getElementById('Hometown').innerHTML=Hometown;
+  document.getElementById('University').innerHTML=University;
+  document.getElementById('Branch').innerHTML=Branch;
+  document.getElementById('Duration').innerHTML="("+Duration+")";
+  document.getElementById('Skills').innerHTML=Skills;
+  document.getElementById('Projects').innerHTML=Projects;
+  document.getElementById('Accomplishments').innerHTML=Accomplishments;
+  document.getElementById('Experience').innerHTML=Experience;
+
+</script>
+  <script>
+  $(function () {
+
+  $('#blanksave').click(function () {
+    var doc = new jsPDF();
+    doc.addHTML($('#blankresume')[0], 15, 15, {
+      'background': '#fff',
+    }, function() {
+      doc.save('resume.pdf');
+    });
+  });
+}); 
+    </script>
+</body>
+</html>

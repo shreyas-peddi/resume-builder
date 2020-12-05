@@ -1,0 +1,26 @@
+{% load static %}
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}">
+    <title>Build Your Own Resume</title>
+  </head>  
+    <body>
+     
+
+    <div class="overlay">
+
+       <h2>Welcome to Resume Builder Platform</h2>
+       <h1><b>Get Your Resume Ready for Interviews/Jobs of your Career </b></h1><br>
+      <center> <button name="login" onclick="window.location.href='{% url 'signin' %}';">Login</button><br>
+       <button name="signup" onclick="window.location.href='{% url 'signup' %}';">Signup</button></center>
+       <br><br><br><br>
+       <h6>All the best for Interview</h6>
+    </div>
+</body>
+</html>
+
+
+

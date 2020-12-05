@@ -1,0 +1,17 @@
+{% extends 'resume/header.html' %}
+{% block title %} SignUp Form{% endblock title %}
+{% block body %}
+	<form method="POST" action="{%url 'signin'%}">
+		<div class="container" style="background :rgba(100,50,255,0.7); left: 60px; width: 100%; height: 702px; margin-top: -20px;">
+			<div class="card" style="margin-top: 100px;margin-left: 360px;background-color: #83f68b;border-radius: 10px;width: 55%;height: 500px;">
+			<div class="card-header" style="color: #1F4383; font-family: 'Comic Sans MS'; margin-left: 340px; font-size: 25px;">SignUp Form</div>
+			<div class="card-body" style="margin-top: 55px;margin-left: 20px;">
+				{%csrf_token%}
+				{{form.as_p}}
+				<button type="submit" class="btn-btn-primary" style="font-family:'Comic Sans MS'; background-color: #D4FED7; color:#1205CE; border-radius: 15px; width: 15%; margin-left: 335px; margin-top: 45px;">SignUp</button><br>
+				<small style="margin-left: 285px;"> After Signing Up, You Should SignIn Now</small>
+			</div>	
+			</div>
+		</div>
+	</form>
+	{% endblock body %}

@@ -1,0 +1,179 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <style type="text/css">
+        body
+        {
+          font-family: sans-serif;
+          font-style: bold; 
+        }
+      </style>
+      <script type="text/javascript">
+
+      function display(){
+        const name = document.getElementById('name').value;
+        const dob = document.getElementById('dob').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const nationality = document.getElementById('nationality').value;
+        const domicile = document.getElementById('domicile').value;
+        const hometown = document.getElementById('hometown').value;
+        const university = document.getElementById('university').value;
+        const branch = document.getElementById('branch').value;
+        const duration = document.getElementById('duration').value;
+        const skills = document.getElementById('skills').value;
+        const projects = document.getElementById('projects').value;
+        const accomplishments = document.getElementById('accomplishments').value;
+        const experience = document.getElementById('experience').value;
+
+        localStorage.setItem("Name",name);
+        localStorage.setItem("Dob",dob);
+        localStorage.setItem("Email",email);
+        localStorage.setItem("Phone",phone);
+        localStorage.setItem("Address",address);
+        localStorage.setItem("Nationality",nationality);
+        localStorage.setItem("Domicile",domicile);
+        localStorage.setItem("Hometown",hometown);
+        localStorage.setItem("University",university);
+        localStorage.setItem("Branch",branch);
+        localStorage.setItem("Duration",duration);
+        localStorage.setItem("Skills",skills);
+        localStorage.setItem("Projects",projects);
+        localStorage.setItem("Accomplishments",accomplishments);
+        localStorage.setItem("Experience",experience);
+        
+        return;
+      }
+    </script>
+    <title>Create your Resume</title>
+</head>
+<body>
+<div class="container-main">
+  <div class="container-content">
+    <h1 style="font-size: 45px;margin-top: -85px;">Create your Resume</h1><br>
+      <form method="POST" action="{% url 'themes' %}" style="margin-top: -85px;">
+      {% csrf_token %}
+        <div class="form-group"><br>
+          <div class="form-row">
+            <div class="col">
+              <h2>Name</h2>
+                <input type="text" name="name" class="form-control" id="name"  placeholder="Enter your Name" style = "width:515px; height:37px; border-radius:5px">
+            </div>
+            <div class="col">
+              <h2>Date of Birth</h2>
+                <input type="DOB" name="dob" class="form-control" id="dob" placeholder="Enter Date of Birth">
+                <small id="small" class="form-text text-muted">Date of 
+              Birth format: dd-mm-yyyy</small>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h2 style="margin-top: -35px;">Contact Info:</h2>
+        <div class="form-row">
+          <div class="col">
+            <label for="email">Email address</label>
+            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email ID">
+          </div>
+          <div class="col">
+            <label for="phone">Phone</label>
+            <input type="text" name="number" class="form-control" id="phone" placeholder="Enter Phone No.">
+            </div>
+          </div><br>
+          <h2 style="margin-top: -5px;">Address</h2>
+          <div class="form-row">
+            <textarea name="address" class="form-control" id="address" rows="3" placeholder="Enter your Address"></textarea>
+          </div><br><
+          <h2 style="margin-top: -25px;">Location Details:</h2>
+          <div class="form-row">
+            <div class="col">
+              <label for="nationality">Nationality</label>
+              <input type="text" name="nationality" class="form-control" id="nationality" placeholder="Enter nation">
+            </div>
+            <div class="col">
+              <label for="domicile">Domicile State</label>
+              <br>
+              <select name="domicile" id="domicile" style = "width:337px; height:37px; border-radius:5px">
+                <option value="">  </option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalayar</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjabr</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+              </select>  
+            </div>
+            <div class="col">
+              <label for="hometown">HomeTown</label>
+              <input type="text" name="hometown" class="form-control" id="hometown" placeholder="Enter your Native Place">
+            </div>
+          </div>
+          <br><br>
+          <h2 style="margin-top: -15px;">Education</h2>
+          
+          <div class="form-row">
+            <div class="col">
+              <label for="university">College/University Name</label>
+              <input type="text" name= "university" class="form-control" id="university" placeholder="Enter Name of your University/College">
+            </div>
+            <div class="col">
+              <label for="branch">Branch</label>
+              <input type="text" name="branch" class="form-control" id="branch" placeholder="Enter Branch">
+            </div>
+            <div class="col">
+              <label for="duration">Duration of Year</label>
+              <input type="text" name="duration" class="form-control" id="duration" placeholder="Enter Duration of your Degree">
+              <small id="small" class="form-text text-muted">Duration format: Starting Year - Ending Year</small>
+            </div>
+          </div>
+          
+          <h2>Key Skills</h2>
+          <div class="form-group">
+            <textarea  name="skills" class="form-control" id="skills" rows="3" placeholder="Enter your Skills with Comma ',' separated"></textarea>
+          </div>
+          <h2>Internships/Projects</h2>
+          <div class="form-group">
+            <textarea  name="projects" class="form-control" id="projects" rows="6" placeholder="Describe about your Internships/Projects"></textarea>
+          </div>
+          <h2>Accomplishments</h2>
+          <div class="form-group">
+            <textarea  name="accomplishments" class="form-control" id="accomplishments" rows="3" placeholder="Share your Achievements/Certifications"></textarea>
+          </div>
+          <h2>Professional Experience</h2>
+          <div class="form-group">
+            <textarea  name="experience" class="form-control" id="experience" rows="6" placeholder="Share your Career Experience in detail"></textarea>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" onclick="display()">Submit</button>
+        </form>
+  </div>
+</div>
+</body>
+</html>

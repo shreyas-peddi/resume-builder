@@ -1,0 +1,156 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fourth.css' %}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://github.com/MrRio/jsPDF/tree/master/dist"></script>
+    <title>Table Format</title>
+  </head>  
+    <body>
+    <div class="overlay">
+       <div class="container-content" id="tableresume"><br><br>
+            <table style="margin-left: 45px" >
+              <tr>
+                <th style="width: 90px; height: 10px; text-align: center; background-color: lightgrey"> Name:- </th>
+                <th style="width: 25px; height: 10px; text-align: center; background-color: lightgrey"> Date of Birth:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 280px; height: 40px; text-align: center; font-size: 30px; background-color: #F0F6ED" id = "Name" name="name"> </th>
+                <th style="width: 80px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Dob" name="dob"> </th>
+              </tr>
+            </table>
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: center; background-color: lightgrey"> Email:- </th>
+                <th style="width: 90px; height: 10px; text-align: center; background-color: lightgrey"> Phone:- </th> 
+                <th style="width: 50px; height: 10px; text-align: center; background-color: lightgrey"> Address:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 260px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Email" name="email"> </th>
+                <th style="width: 250px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Phone" name="phone"> </th>
+                <th style="width: 550px; height: 60px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Address" name="address"> </th>
+              </tr>
+            </table>
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: center; background-color: lightgrey"> Nationality:- </th>
+                <th style="width: 90px; height: 10px; text-align: center; background-color: lightgrey"> Domicile:- </th> 
+                <th style="width: 50px; height: 10px; text-align: center; background-color: lightgrey"> Hometown:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 260px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Nationality" name="nationality"> </th>
+                <th style="width: 250px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Domicile" name="domicile"> </th>
+                <th style="width: 250px; height: 60px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Hometown" name="hometown"> </th>
+              </tr>
+            </table>
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: center; background-color: lightgrey"> University:- </th>
+                <th style="width: 90px; height: 10px; text-align: center; background-color: lightgrey"> Branch:- </th> 
+                <th style="width: 50px; height: 10px; text-align: center; background-color: lightgrey"> Duration:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 260px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "University" name="University"> </th>
+                <th style="width: 250px; height: 40px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Branch" name="branch"> </th>
+                <th style="width: 250px; height: 60px; text-align: center; font-size: 20px; background-color: #F0F6ED" id = "Duration" name="duration"> </th>
+              </tr>
+            </table>
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 50px; height: 10px; text-align: center; background-color: lightgrey"> Skills:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 950px; height: 50px; text-align: center; font-size: 14px; background-color: #F0F6ED" id = "Skills" name="skills"> </th>
+              </tr>
+            </table>
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 50px; height: 10px; text-align: center; background-color: lightgrey"> Projects:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 950px; height: 120px; text-align: center; font-size: 14px; background-color: #F0F6ED" id = "Projects" name="projects"> </th>
+              </tr>
+            </table>
+            
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: center; background-color: lightgrey"> Accomplishments:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 950px; height: 80px; text-align: center; font-size: 14px; background-color: #F0F6ED" id = "Accomplishments" name="accomplishments"> </th>
+              </tr>
+            </table>
+
+
+            <table style="margin-left: 45px; margin-top: 5px" >
+              <tr>
+                <th style="width: 110px; height: 10px; text-align: center; background-color: lightgrey"> Experience:- </th> 
+              </tr>
+              <tr>
+                <th style="width: 950px; height: 160px; text-align: center; font-size: 14px; background-color: #F0F6ED" id = "Experience" name="experience"> </th>
+              </tr>
+            </table><br><br>
+       </div>
+       <div class="press">
+       <button type="submit"class="btn btn-primary" id="tablesave" onclick="blankresume()"> Save as PDF </button>
+       <button name="done" onclick="window.location.href='{% url 'signout' %}';">Sign Out</button>
+     </div>
+    </div>
+    <script>
+  const Name = localStorage.getItem("Name");
+  const Dob = localStorage.getItem("Dob");
+  const Email = localStorage.getItem("Email");
+  const Phone = localStorage.getItem("Phone");
+  const Address = localStorage.getItem("Address");
+  const Nationality = localStorage.getItem("Nationality");
+  const Domicile = localStorage.getItem("Domicile");
+  const Hometown = localStorage.getItem("Hometown");
+  const University = localStorage.getItem("University");
+  const Branch = localStorage.getItem("Branch");
+  const Duration = localStorage.getItem("Duration");
+  const Skills = localStorage.getItem("Skills");
+  const Projects = localStorage.getItem("Projects");
+  const Accomplishments = localStorage.getItem("Accomplishments");
+  const Experience = localStorage.getItem("Experience");
+  
+  document.getElementById('Name').innerHTML=Name;
+  document.getElementById('Dob').innerHTML=Dob;
+  document.getElementById('Email').innerHTML=Email;
+  document.getElementById('Phone').innerHTML=Phone;
+  document.getElementById('Address').innerHTML=Address;
+  document.getElementById('Nationality').innerHTML=Nationality;
+  document.getElementById('Domicile').innerHTML=Domicile;
+  document.getElementById('Hometown').innerHTML=Hometown;
+  document.getElementById('University').innerHTML=University;
+  document.getElementById('Branch').innerHTML=Branch;
+  document.getElementById('Duration').innerHTML=Duration;
+  document.getElementById('Skills').innerHTML=Skills;
+  document.getElementById('Projects').innerHTML=Projects;
+  document.getElementById('Accomplishments').innerHTML=Accomplishments;
+  document.getElementById('Experience').innerHTML=Experience;
+
+    </script>
+    <script type="text/javascript">
+      $(function () {
+
+  $('#tablesave').click(function () {
+    var doc = new jsPDF();
+    doc.addHTML($('#tableresume')[0], 15, 15, {
+      'background': '#fff',
+    }, function() {
+      doc.save('resume.pdf');
+    });
+  });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap:200,300,400,500,600,700,900');
+
+body{
+background-color: #B64CFB;
+color: rgb(20,30,90);
+font-family: 'Comic Sans MS'
+}
+h1{
+font-size: 45px;
+font-family: 'Comic Sans MS';
+color:  #1F4383;
+display: flex;
+flex-direction:column;
+align-items: center;
+justify-content: center;
+height: 30vh;
+}
+
+h2{
+color: #1F4383;
+font-family: 'Comic Sans MS'
+}
+
+.container-content{
+    color: white;
+    border-radius: 10px;
+    margin : 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #5BF3AC;
+    font-family: 'Comic Sans MS'
+}
+
+.container-main{
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Comic Sans MS'}
+
+
+label{
+    color: #D30773;
+    font-family: 'Comic Sans MS'
+}
+
+.btn-primary{
+    background-color: rgb(20,30,90);
+    color: rgb(241,169,164);
+    border: 2px solid rgb(241,169,164);
+    font-size:18px;
+    border-radius: 19px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    font-family: 'Comic Sans MS'
+}
+
+.btn-primary:hover{
+    background-color: rgb(241,169,164);
+    color: rgb(20,30,90);
+    font-family: 'Comic Sans MS'
+
+}
+
+#name{
+width: 50%;
+font-family: 'Comic Sans MS'
+}
+
+
+
+@media screen and (max-width: 1000px)
+{
+    .container-main{
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: 'Comic Sans MS'
+    }
+
+}
